@@ -6,9 +6,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "^5.1.0"
-  },  
-   "author": "Akwasi Kusi-Appiah",
+  },
+  "author": "Akwasi Kusi-Appiah",
   "scripts": {
-  "start": "node index.js"
+    "start": "node app.js"
   }
 }

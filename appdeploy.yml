@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm install -g yarn
+      - yarn install
+  build:
+    commands:
+      - zip -r ebs-app.zip . -x ".git/*" ".gitignore"
+artifacts:
+  files:
+    - ebs-app.zip
