@@ -10,12 +10,9 @@ phases:
       - yarn install
   build:
     commands:
-      - echo "Building the project..."
+      - echo "Running build (or placeholder)..."
       - yarn build
-      - echo "Zipping build files..."
-      # Delete previous ZIP if it exists
-      - rm -f ebs-app.zip
-      # Create ZIP of everything in current directory (or customize path)
+      - echo "Zipping app for Elastic Beanstalk..."
       - zip -r ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
 artifacts:
   files:

@@ -9,6 +9,7 @@
   },
   "author": "Akwasi Kusi-Appiah",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "echo 'Nothing to build. Zipping app...' && exit 0"
   }
 }
