@@ -4,11 +4,19 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - npm install -g yarn
+      - echo "Enabling Corepack and setting Yarn version..."
+      - corepack enable
+      - corepack prepare yarn@4.6.0 --activate
       - yarn install
   build:
     commands:
-      - zip -r ebs-app.zip . -x ".git/*" ".gitignore"
+      - echo "Building the project..."
+      - yarn build
+      - echo "Zipping build files..."
+      # Delete previous ZIP if it exists
+      - rm -f ebs-app.zip
+      # Create ZIP of everything in current directory (or customize path)
+      - zip -r ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
 artifacts:
   files:
     - ebs-app.zip
