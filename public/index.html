@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akwasi's Personal Site</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Hello, I'm Akwasi Kusi-Appiah</h1>
+    <div class="image-container">
+      <img id="rotating-image" src="/images/tree-pix.png" alt="Natural Sites" />
+      <span>This is a website displaying Natural Sights</span>
+    </div>
+    <script>
+      const images = [
+        "/images/tree-pix.png",
+        "/images/nature-delight.png",
+        "/images/dawn-of-day.png",
+        "/images/break-out.png",
+        "/images/beauty-side.png",
+      ];
+      let currentIndex = 0;
+      const imageElement = document.getElementById("rotating-image");
+      const descriptionElement = document.getElementById("description");
+
+      function rotateImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex];
+      }
+
+      // Rotate every 2 minutes (120,000 ms)
+      setInterval(rotateImage, 3000);
+    </script>
+  </body>
+</html>

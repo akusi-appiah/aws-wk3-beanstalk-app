@@ -1,0 +1,14 @@
+{
+  "name": "wk3-beanStalk-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js website displaying my name and picture",
+  "packageManager": "yarn@4.6.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^5.1.0"
+  },  
+   "author": "Akwasi Kusi-Appiah",
+  "scripts": {
+  "start": "node index.js"
+  }
+}
