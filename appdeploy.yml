@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 phases:
   install:
     runtime-versions:
@@ -13,7 +13,7 @@ phases:
       - echo "Running build (or placeholder)..."
       - yarn build
       - echo "Zipping app for Elastic Beanstalk..."
-      - zip -r ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
+      - zip -r wk3-ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
 artifacts:
   files:
-    - ebs-app.zip
+    - wk3-ebs-app.zip
