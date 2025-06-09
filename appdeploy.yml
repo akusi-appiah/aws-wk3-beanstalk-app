@@ -1,19 +1,19 @@
-version: 0.2
-phases:
-  install:
-    runtime-versions:
-      nodejs: 20
-    commands:
-      - echo "Enabling Corepack and setting Yarn version..."
-      - corepack enable
-      - corepack prepare yarn@4.6.0 --activate
-      - yarn install
-  build:
-    commands:
-      - echo "Running build (or placeholder)..."
-      - yarn build
-      - echo "Zipping app for Elastic Beanstalk..."
-      - zip -r wk3-ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
-artifacts:
-  files:
-    - wk3-ebs-app.zip
+# version: 0.2
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 20
+#     commands:
+#       - echo "Enabling Corepack and setting Yarn version..."
+#       - corepack enable
+#       - corepack prepare yarn@4.6.0 --activate
+#       - yarn install
+#   build:
+#     commands:
+#       - echo "Running build (or placeholder)..."
+#       - yarn build
+#       - echo "Zipping app for Elastic Beanstalk..."
+#       - zip -r wk3-ebs-app.zip . -x "node_modules/*" ".git/*" "*.zip"
+# artifacts:
+#   files:
+#     - wk3-ebs-app.zip
