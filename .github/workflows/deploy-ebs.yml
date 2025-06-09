@@ -2,7 +2,7 @@ name: Deploy to Elastic Beanstalk
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-deploy:
@@ -12,7 +12,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Zip application
+    - name: Create ZIP package
       run: zip -r deploy_package.zip . -x '*.git*'
 
     - name: Configure AWS credentials
@@ -24,7 +24,7 @@ jobs:
 
     - name: Upload ZIP to S3
       run: |
-        aws s3 cp deploy_package.zip s3://$S3_BUCKET/deploy-${{ github.sha }}.zip
+        aws s3 cp deploy_package.zip s3://$S3_BUCKET/deploy_package.zip
       env:
         S3_BUCKET: ${{ secrets.EB_S3_BUCKET }}
 
@@ -38,4 +38,4 @@ jobs:
         version_label: eb-${{ github.sha }}
         region: ${{ secrets.AWS_REGION }}
         existing_bucket_name: ${{ secrets.EB_S3_BUCKET }}
-        deployment_package: deploy-${{ github.sha }}.zip
+        deployment_package: deploy_package.zip
