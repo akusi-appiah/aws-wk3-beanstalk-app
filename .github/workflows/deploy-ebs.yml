@@ -39,3 +39,8 @@ jobs:
         region: ${{ secrets.AWS_REGION }}
         existing_bucket_name: ${{ secrets.EB_S3_BUCKET }}
         deployment_package: deploy_package.zip
+
+    - name: Clean up workspace
+      run: |
+        if: always()
+        run: rm -f deploy_package.zip
