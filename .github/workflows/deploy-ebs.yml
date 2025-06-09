@@ -2,7 +2,7 @@ name: Deploy to Elastic Beanstalk
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
 
 jobs:
   build-deploy:
@@ -39,4 +39,3 @@ jobs:
         region: ${{ secrets.AWS_REGION }}
         existing_bucket_name: ${{ secrets.EB_S3_BUCKET }}
         deployment_package: deploy-${{ github.sha }}.zip
-
